@@ -2,13 +2,15 @@ import pandas as pd
 import psycopg2
 
 # Anslut till PostgreSQL-databasen
+
 conn = psycopg2.connect(
     host="localhost",
     database="postgres",
     user="postgres",
-    password="postgres",
-    port=5433
+    password="990223",
+    port=5432
 )
+
 cursor = conn.cursor()
 
 try:
@@ -42,7 +44,7 @@ except Exception as e:
 # I VSCode kan man kopiera absolut sökväg genom att högerklicka på filen och välja "Copy Path"
 
 # Relativ sökväg, relativ till där filen som exekveras ligger i
-csv_file_path = "../data_sources/sales_data.csv"  # Sökvägen till din CSV-fil
+csv_file_path = "C:\\Skrivbord\\Data Manager\\DMSTO24-DS\\data_sources\\sales_data.csv"  # Sökvägen till din CSV-fil
 df = pd.read_csv(csv_file_path)
 
 print(df.head())
